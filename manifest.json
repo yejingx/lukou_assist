@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+
+    "name": "路口商品分享助手",
+    "description": "路口商品分享助手",
+    "version": "1.0",
+
+    "permissions": [
+        "tabs",
+        "http://item.taobao.com/item.htm?*"
+    ],
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://lukou.com/post/commodity?url=*",
+                "http://www.lukou.com/post/commodity?url=*"
+            ],
+            "js": ["jquery-2.1.3.min.js", "fetch.js"]
+        }
+    ]
+}
